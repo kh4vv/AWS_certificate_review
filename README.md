@@ -9,8 +9,11 @@ Here is a free online lecture that I found in YouTube:
 
 ## Table of Contents
 
-- [`Amazon Elastic File System (EFS)`](#EFS)
+- [`Amazon Elastic File System`](#EFS)
+- [`Amazon Machine Image`](#AMI)
 - [`API Gateway`](#API)
+- [`Elastic Block Store`](#EBS)
+- [`Route 53`](#Route53)
 
 
 ## Material and Problem Review
@@ -65,8 +68,73 @@ Q3. In AWS API Gateway, which of the following security measures is provided def
 
 A. Protection from DDos attacks
 
+### AMI
+- Amazon Machine Images are region specific. In order to move in another region, you can copy an AMI into the desination region via **CopyAMI**.
+- Able to create AMI from an exisiting EC2 instance regardless of running or stopped.
+- **Community AMI** are free AMIs maintained by the community
+- **AWS Marketplace** are either free or paid subscription AMIs maintained by vendors.
+- AMIs have an **AMI ID**.
+- **AMI holds following information:** 1) A template for the root volume for the instance 2) Launch permissions that control AWS accounts. 3) A block device mapping
 
 
+### EBS
+- EBS is a virtual hard disk. Use snapshot to a point-in-time copy of the disk
+- Volumes in EBS, Snapshots in S3
+- If taking Snapshot of a root volume, EC2 instance should be stopped. 
+- Able to Snapshots while the instance is running
+- Create AMIs from Volumes or Snapshot
+- Volumes durable, block-level storage device that can attach a single EC2 instance
+- Instance Store Volumes is temporary located on disks that are physcially attached to a host machine.
+- EBS backed instances stop without any data loss
+- By default, root volumes are deleted on termination
+- Able to encrypt. Encrypted snapshot cannot share.
+- EBS Volume Type
+    
+    SSD
+    
+        General Purpose SSD: balance price and Performance for a wide variety of workload
+
+        Provisioned IOPS SSD: Highes-performance SSD volume for missioncritical low-latency or high-throughput workload
+
+    HDD
+
+        Throughput Optimized HDD: Low cost HDD volume designed for frequently accessed, throughput-intensive workloads
+
+        Cold HDD: Lowest cost HDD volume designed for less frequently acessed workload
+
+#### Exampel Problems
+
+Q. Which of the following statemetns are correct with respect to the instance store and EBS volume?
+
+A. EBS backed EC2 instances can persist storage across instance stop, terminate, and failures.
+
+A. You canno add instance store volumes once the EC2 instance is launched.
+
+Q. Which of the following statements is true with respect to encryption?
+
+A. You can enable encryption while copying a snapshot from an unencrypted snapshot. 
+
+
+### Route53
+- Route53 is a DNS provider, register and manage domains, create recod sets. 
+- Simple Routing: default policy. multiple address in a random endpoint selection
+- Weighted Routing: split up traffic based on weight
+- Latency-Based Routing: directs traffic based on region. lowest latency as possible.
+- Failover Routing: primary site in one location, secondary data recovery site in another.
+- Geolocation Routing: directs traffic based on geographic location 
+- Geo-proximity Routing: directs traffic based on geographic location by using 'Bias' value
+- Multi-value Answer Routing: return mltiple values in response to DNS queries.
+- Traffic Flow: visual editor to changing routing policies. 
+- AWS Alias Record: detect changed IPs for AWS resources and adjusts automatically
+- Route53 Resolver: regionally route DNS quries between VPCs and network. **Hybrid Environments**
+- Health checks are available. 
+- Not able to create a CNAME record for the Parent, Naked, or Apex domain.
+
+#### Example Problems
+
+Q. Which of the following types can be monitored for heath checks by AWS Route 53?
+
+A. Endpoints and State of CloudWatch alarm.
 
 
 
