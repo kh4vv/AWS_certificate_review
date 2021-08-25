@@ -13,6 +13,7 @@ Here is a free online lecture that I found in YouTube:
 - [`Amazon Machine Image`](#AMI)
 - [`API Gateway`](#API)
 - [`Elastic Block Store`](#EBS)
+- [`Lambda`](#Lambda)
 - [`Route 53`](#Route53)
 
 
@@ -136,6 +137,46 @@ Q. Which of the following types can be monitored for heath checks by AWS Route 5
 
 A. Endpoints and State of CloudWatch alarm.
 
+### Lambda
 
+- Lambda is serverless function : don't need to worry about any underlying architecture
+- Good for short running tasks. Longer tasks (>15 mins) consider use **Fargate**
+- **7 runtime language environments**: Ruby, Python, Java, Node Js, C#, Powerhsell and Go.
+- Pay per invocation. (First 1M requests per month are free)
+- The duration timeout for up to **15 min** and memory up to **3008 MB**. 
+- Able to trigger Lambdas from the SDK or multiple AWS servcies such as S3, API Gateway, DynamoDB
+- By default, run in No VPC. To interact with some services, it has to be in same VPC
+- scale up to **1000 of concurrent functions** in seconds
+- **Cold Starts** : delay excution
+- Services that invoke lambda Functions Synchronously:
+        
+        ELB, Cognito, Lex, Alexa, API Gateway, CloudFront, Kinesis, AWS Step Function, S3 Batch
+- Services that invoke lamdba Funcions Asynchronously:
+
+        S3, SNS, SES, Aws CloudFormation, CloudWatch, CloudWatchEvent, AWS CodeCommit, AWS Config, AWS loT, AWS loT Events, AWS CodePipeline
+#### Example problems
+Q. Which of the following services does not asynchronously invoke the AWS Lamdba function?
+
+A. AWS Step Functions and AWS API Gateway
+
+Q. When configuring AWS SQS as event source for AWS Lambda function, what is the maximum batch size supported by AWS SQS for ReceiveMessage call?
+
+A. 10
+
+Q. Which of the follwoing are AWS CloundFront events that can trigger AWS Lambda@edge function?
+
+A. Viewer Request/Respond, Origin Request/Respond.
+
+Q. Which of the following are poll-based event sources for AWS Lambda function?
+
+A. AWS Kinesis, AWS SQS, and AWS DynamoDB
+
+Q. Which of following action is required Lambda execution role to write the logs into AWS CloudWatch?
+
+A. logs:CreateLogGroup, logs:CreateLogStream, and logs:PutLogEvent
+
+Q. Which of the following options is not AWS CloudWatch metric for AWS Lamdba function?
+
+A. Memory
 
 
