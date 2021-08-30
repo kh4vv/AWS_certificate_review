@@ -15,24 +15,33 @@ Here is a free online lecture that I found in YouTube:
 - [`Aurora`](#Aurora)
 - [`Auto Scaling Groups`](#ASG)
 - [`Cloud Front`](#CF)
+- [`Cloud Formation`](#CFormation)
 - [`Cloud Trail`](#CT)
 - [`Cloud Watch`](#CW)
+- [`Cognito`](#Cognito)
 - [`Command Line Interface and Software Development Kit`](#CLI)
 - [`Domain Name System`](#DNS)
 - [`DynamoDB`](#DynamoDB)
+- [`ElastiCache`](#ElastiCache)
+- [`Elastic Beanstalk`](#EB)
 - [`Elastic Block Store`](#EBS)
 - [`Elastic Compute Cloud`](#EC2)
 - [`Elastic Container Service`](#ECS)
 - [`Elastic Load Balancer`](#ELB)
+- [`Identity Access Management`](#IAM)
 - [`Kinesis`](#Kinesis)
 - [`Lambda`](#Lambda)
+- [`Network Access Control`](#NACL)
+- [`Network Address Translation`](#NAT)
 - [`Redshift`](#Redshift)
 - [`Relational Database Service`](#RDS)
 - [`Route 53`](#Route53)
+- [`Security Groups`](#SG)
 - [`Simple Notification Service`](#SNS)
 - [`Simple Queue Service`](#SQS)
 - [`Simple Storage Service`](#S3)
 - [`Snowball`](#Snowball)
+- [`Storage Gateway`](#StorageGateway)
 - [`Virtual Private Cloud`](#VPC)
 
 
@@ -547,6 +556,39 @@ A. Set configuration in the user data parameter of ECS instance.
 - Egress-only internet gateway is a VPC component that allows outboud communitcation over IPv6 from instances in your VPC to the interent, and prevents the internet from initiating an IPv6 connection with your instances. 
 - Policy-based VPNs using one or more pairs of security associations drop already existing connections when new connection requests are generated with different security associations-> cause intermittent packet loss and other connectivity failures
 
+### NAT
+- Must be diable source and destination checks when create NAT
+- NAT instance must exist in a **public subnet**
+- a route out of the private subnet to the NAT instance
+- High avaiability by auto scaling groups, multiple subnets in different AZ, automate failover between using a script
+- NAT Gateway: redundant insdie an AZ
+- 1 NAT Gateway inside 1 AZ. (5 GBps to 45 GBps)
+- prefer setup for enterprise systems
+- no requirement to patch NAT gateway
+- automatically assigned a public IP addresses
+- Route Tables for NAT Gateway MUST be updated
+
+### NACL
+- VPCs are automatically given a defualt NACL (allow all in/out bound traffic)
+- Each subnet within a VPC must be associated with a NACL
+- Subnets can only be associated with 1 NACL at a time. New NACL will remove the previous association
+- subnet automatically associate with default NACL
+- Rule: allow or deny traffic
+- Stateless (allow in/out bound)
+- deny all traffic by default
+- NACLs contain a numbered list of rules that gets evaluated in order from lowest to highest (lowest number = strongest rule)
+
+### SG
+- Security groups like firewall at the instance level
+- inbound traffic is blocked by default/outbound traffic is allowed by default
+- specify the source to be either an IP range, single IP address or another security group
+- Statefull 
+- change effect immediately
+- EC2 instance can belong to multiple security grups and vice verse
+- CANNOT block specific IP address (NACL is option)
+- 10,000 security groups per region (default 2500)
+- 60 inbound rules and outbund rules per security group
+
 #### Example problems
 Q. Your organization was looking to download patches onto an existing EC2 instance inside a private subnet in an exisiting custom VPC. You created a NAT instance and a NAT Gateway. However, when you try to download patches from the internet onto the EC2 instance, the connection gets timed out. What could be reasons?
 
@@ -558,3 +600,64 @@ Q. You have a bastion host EC2 instance on AWS VPC public subnet. You would want
 
 A. Allow SSH protocol (port 22) onSecurity Group Inbound. Allow Network ACL inbound and Network ACL outbout for your IP addresses
 
+### CFormation
+- CloudFormation: to automate the provisioning of resource, infrastructure as Code (IaC)
+- size less than 0.05 MB and import into CloudFormation via S3
+- NestedStacks
+- At least one resorce included
+- MetaData : extra information about the template
+- Descirption
+- Parameters: user input
+- Transforms: applies marcos
+- Outputs
+- Mapping : maps keys to value
+- Resource: define the resources
+- Condition
+
+### Cognito
+- decentralized managed authentication system. 
+- User Pools: user directory via OAuth to IpD such as Facebook, Google, Amazon to connect to web-app.
+- JWTs for to prersist authentication
+- Identity Pools : temporary AWS credientials
+- Cognito Sync: sync user data and preferences across dervices with one line of code (by SNS)
+- Web Identity Federation: exchange identity and security information between an identity provider(IdP) and an application
+- Identity Provider (IdP): a trusted provider of your user identity such as goold, facebook, twitter, Amazon
+- OIDC: type of IdP using Oauth
+- SAML: type of IdP using single sign on
+
+### EB
+- Elastic Beanstalk handles deployment, from capacity provisioning, load balancing, auto-scaling to app health monitoring
+- Run a web-app without knowing underlying infrastructure
+- For test or development apps. 
+- available platform: java, .Net, php, node.js, python, ruby, go, and docker
+
+### ElastiCache
+- ElastiCache manages in-memory caching service
+- either Memcached (simple key/value store for HTML) or Redis (richer data types and operations)
+- Cache is a temporary storage area
+
+
+### StorageGateway
+- Storage Gateway connect on-premis storage to cloud storage 
+- File Gateway: S3 at a local file system using NFS or SMB
+- Volume Gateway: use for backup (stored / cached)
+- Stored Volume Gateway: continuously backups local storage to S3 as EBS Snapshots primary data on-premise (Size: 1 GB to 16 TB)
+- Cached Volume Gateway: caches the frequently used files on-premise. (size: 1 GB to 32 GB)
+- Tape Gateway: backup virtual tapes to S3 Glacier for long archive storage
+
+### IAM
+- IAM: manage access to users and resources. Universal system and free service. 
+- Root account: full adminstrator
+- By default, new IAM accounts do not have any permission
+- New user assigned an Access Key ID/Secret
+- Always set up MFA for Root Account
+- Only user can enable MFA option (Not Root Account)
+- IAM has password policies
+- IAM identities as User, Group, and Roles
+- User: end users who log into the console or interact with AWS resorces programmatically
+- Groups: group up users to share same permission levels of group
+- Roles: associate permission to a Role
+- Policies: JSON file to grant permissions for a specific user, group, or role to access services. 
+- Managed Policies : provide by AWS, cannot edit
+- Customer Managed Polices: editable
+- Inline Policies: directly attached to a user
