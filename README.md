@@ -13,12 +13,16 @@ Here is a free online lecture that I found in YouTube:
 - [`Amazon Machine Image`](#AMI)
 - [`API Gateway`](#API)
 - [`Aurora`](#Aurora)
+- [`Auto Scaling Groups`](#ASG)
 - [`Cloud Front`](#CF)
 - [`Cloud Trail`](#CT)
 - [`Cloud Watch`](#CW)
+- [`Command Line Interface and Software Development Kit`](#CLI)
 - [`Domain Name System`](#DNS)
 - [`DynamoDB`](#DynamoDB)
 - [`Elastic Block Store`](#EBS)
+- [`Elastic Compute Cloud`](#EC2)
+- [`Elastic Container Service`](#ECS)
 - [`Elastic Load Balancer`](#ELB)
 - [`Kinesis`](#Kinesis)
 - [`Lambda`](#Lambda)
@@ -29,6 +33,7 @@ Here is a free online lecture that I found in YouTube:
 - [`Simple Queue Service`](#SQS)
 - [`Simple Storage Service`](#S3)
 - [`Snowball`](#Snowball)
+- [`Virtual Private Cloud`](#VPC)
 
 
 ## Material and Problem Review
@@ -249,6 +254,14 @@ Q. Your organization has an AWS Setup and wants to have the history of all API c
 
 A. Enable CloudTrail logging for SNS
 
+### ASG
+- ASG EC2 instances grouped for scaling (out to add/in to remove server) and management
+- Target Scaling Policy: 75% of avg CPU utilization
+- Simple Scaling: policy triggers a scaling when alarm
+- Scaling Policy with Steps: new verson of SSP to create steps based on eculation alarm value
+- Health check run against either on ELB or the EC2 instances
+- Launch Configuration: not able to edit once it is created and must be manually updated in by editing the AS setings. 
+
 ### ELB
 
 - Network, Application, and Classic Load Balancer
@@ -447,4 +460,101 @@ A. Transactions are not impacted
 - Snowmobile : 100 PB
 - Both export and import data using snawball and snowmobile and import into S3 and Glacier
 - Snowball Edge: cluster ina group of 5 to 10 devices. (storage optimized 24 vCPUs, compute optimized 54 vCPUs, and GPU optimized 54vCpus)
+
+### CLI
+- Programmatic Access via IAM console to use CLI and SDK
+- AWS configure command to set up AWS credentials for CLI
+- CLI install via Python script
+- SDK: c++, Go, Java, JS, .Net, NodeJs, Php, Python, Ruby
+
+### EC2
+- EC2 is clouding computing service: configure OS, Storage, Memory, Network Trhoughput and launch and SSH into server within a min
+- EC2 instance types: 
+
+        General Purpose: balacne of comute, memory  and networking resource
+        Compute Optimized: ideal for compute bound applications (high performance processor)
+        Memory Optimized: fast performance for workloads (large dataset)
+        Accelerated Optimized: co-processor
+        Storage Optimized: high, sequential read and write access to very large dataset
+
+- Placement group: logical placement of instances to optimize for communication, performance, or durability.
+- UserData: automatically run
+- MetaData: meta data about current instance. access via a local endpoint to SSH
+- Instance Profiles: a container for IAM role. 
+- EC2 4 pricing models:
+
+        On-Demand: low cost/flexible. only pay per hour. Not iterrupted
+        Reserved Instance: upto 75% off. steady state or predictable usae. Term(1 or 3 yr)x class offering(standard, convertible, scheduled) x payment option for payment. 
+        Spot Pricing: upto 90% off.non-critical background job (can be interrupted) AWS can terminate at anytime. 
+        Dedicated Hosting: dedicated server
+
+### ECS
+- Features of ECS: Containers and Images, Task Definitions, Tasks and Scheduling, Clusters, Containger Agent
+- Task Definition: a JSON file that desribes one or more containers, up to 10, that form application, blueprint for APP. 
+
+#### Example Problems:
+Q.  Your organization is planning to use AWS ECS for docker app. However, they would like to apply 3rd party monitoring tools on the ECS instances and self-manage these EC2 instances. What do you suggest?
+
+A. Customers will have control over AWS ECS instances and can setup monitoring like a normal EC2 instane.
+
+Q. Which of the following is a correct statement concerning CS instances when accessing the Amazon ECS service endpoint?
+
+A. Create an interface VPC Endpoint for ECS service and attach to VPC subnet's route table in which ECS instances are running.
+
+A. Container instances have public IP addresses
+
+Q. Which of the following can be used with Amazon ECS to run contianers without managing servers or clusters of Amazon EC2 instances?
+
+A. Fargate
+
+Q. which of the following are the parameters specificed in task definition?
+
+A. The Docker images to use with the contianers in your task.
+
+A. How much CPU and memory to use with each containers
+
+A. The command the continaer shouldr un when it is started
+
+Q. Which of the following are the parameters specified in Service definition?
+
+A. Cluster on which to run your service
+
+A. Full ARN of the task definition to run in your service
+
+A. IAM role that allows Amazon ECS to make calls to your LB on your behalf
+
+Q. You are launching the AWS ECS instance. You would like to set the ECS container agaent configuration during the ECS instance launch. What should you do?
+
+A. Set configuration in the user data parameter of ECS instance.
+
+### VPC
+- VPC Flow log monitor in/out traffic of network. Turn on VPC, subnet, network interface level
+- Not able to change configuration after it creates
+- Not able to tag like other AWS resources
+- Not able to flow log peering VPC unless its under same account
+- able to deliever to S3 or cloudWatch log
+- contains source and IP address
+- Not monitored: instance traffic, window license activation traffic, traffic to/from meta data, DHCP traffic, any traffic that is reserved IP address of other VPC router
+- VPC endpoint keeps traffic between AWS services within AWS network.
+- Two types: Interface endpoint(cost money and support many AWS services) and Gateway endpoint(free and target for specific route in route table and only support S3 and DynamoDB)
+- if no public IPv4 address, able to associate an Elastic IP addresses
+- AWS IAM role/user used to access the S3 bucket needs to have access granted via IAM poplicy before accessing
+- Inbound rule #100 and the OUtbound rule #200 higher number rule
+- DataSync allows to configure a source storage location (NFS or SMB share) on-premises and a destination in AWS storage services (S3 or EFS)
+- In a VPC peering connection, using the NAT Gateway of another VPC not supported in AWS
+- By default, custom VPCs does NOT have DNS Hostnames enabled
+- By default, deny all incoming traffic and allow all outbound traffic
+- Egress-only internet gateway is a VPC component that allows outboud communitcation over IPv6 from instances in your VPC to the interent, and prevents the internet from initiating an IPv6 connection with your instances. 
+- Policy-based VPNs using one or more pairs of security associations drop already existing connections when new connection requests are generated with different security associations-> cause intermittent packet loss and other connectivity failures
+
+#### Example problems
+Q. Your organization was looking to download patches onto an existing EC2 instance inside a private subnet in an exisiting custom VPC. You created a NAT instance and a NAT Gateway. However, when you try to download patches from the internet onto the EC2 instance, the connection gets timed out. What could be reasons?
+
+A. NAT Gateway created in a private subnet without an internet gateway
+
+A. The route table is NOT updated to direct Internet-bound traffic to the NAT gateway. 
+
+Q. You have a bastion host EC2 instance on AWS VPC public subnet. You would want to SSH to Bastion host EC2 instance. What would be the secure and minimal configuration you need for SSH requests to work? Assume route table is already set up with internet gateway.
+
+A. Allow SSH protocol (port 22) onSecurity Group Inbound. Allow Network ACL inbound and Network ACL outbout for your IP addresses
 
