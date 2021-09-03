@@ -4,7 +4,7 @@
 - Scalble capacity based on traffic. 
 
 ## EBS Volume
-- Elastic Block Storage: the virtual hard drive in cloud. 
+- [`Elastic Block Storage`](./EBS.md): the virtual hard drive in cloud. 
     - Types of EBS storage : *Frequent Exam apperance*
         - General Purpose (SSD)
         - Provisioned IOPS (SSD)

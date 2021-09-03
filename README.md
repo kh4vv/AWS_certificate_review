@@ -4,8 +4,9 @@
 
 This is a study guide for the AWS certificate exam for ME. However, everyone can look it up as well. I hope these materials can help you to pass the exam.
 
-Here is a free online lecture that I found in YouTube:
-[Online Lecture](https://www.youtube.com/watch?v=Ia-UEYYR44s)
+- Here is a free online lecture that I found in YouTube: [Online Lecture](https://www.youtube.com/watch?v=Ia-UEYYR44s)
+
+- Here is detail notes for below contents: [Detail Materials Note](./index.md)
 
 ## Table of Contents
 
