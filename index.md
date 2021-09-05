@@ -25,4 +25,15 @@
 20. [`IAM`](./IAM.md)
 21. [`Cognito`](./Cognito.md)
 22. [`RAM`](./RAM.md)
-
+23. [`KMS`](./KMS.md)
+- Monitoring Services
+24. [`Auto Scaling`](./AS.md)
+25. [`CloudFormation`](./CF.md)
+26. [`CloudTrail`](./CloudTrail.md)
+27. [`CloudWatch`](./Cloudwatch.md)
+28. [`Config`](./Config.md)
+- Others
+29. [`Organizations`](./Org.md)
+30. [`CodeBuild, CodeCommit, CodeDeploy, X-Ray`](./Code.md)
+- Migration Service
+31. [`Database Migration Service`](./DMS.md)

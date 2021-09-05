@@ -17,13 +17,13 @@
 ## Lambda Event
 - Lambda Event is an entity that invokes the Lambda Function
 - support synchronous invocation of Lambda Functions
-    - DynamoDB, SQS, SNS, CloudWatch Event, API Gateway, IoT, Kinesis, CloudWatch Logs
+    - [`DynamoDB`](./DynamoDB.md), [`SQS`](./SQS.md), [`SNS`](./SNS.md), [`CloudWatch`](./Cloudwatch.md) Event, [`API Gateway`](./API.md), IoT, [`Kinesis`](./Kinesis), [`CloudWatch`](./Cloudwatch.md) Logs
 
 ## Lang
 - NodeJS, Go, Java, Python, and Ruby
 
 ## Lambda@Edge
-- The feature of Amazon CloudFront which allows to run code closer to the location of users of application
+- The feature of [`Amazon CloudFront`](./CloudFront.md) which allows to run code closer to the location of users of application
 - Improve performance and reduce latency
 - Pay for amount of compute time
 - run the code in response to the event created by the CDN

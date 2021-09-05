@@ -11,7 +11,7 @@ Amazon Elastic Kubernetes Service (EKS) is a service that enables users to manag
 
 ## Integration
 - Images: Amazon ECR for continer images
-- Load distribution: Amazon ELB
-- Authentication: AWS IAM
+- Load distribution: [`Amazon ELB`](./ELB.md)
+- Authentication: [`AWS IAM`](./IAM.md)
 - Isolation: Amazon VPC
 

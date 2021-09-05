@@ -15,7 +15,7 @@ Amazon FSx for Windows File Server is an FSx solution that offers a scalable and
 - Automatically and synchonously replicate data in standby AZ to manage failover
 - Using AWs DataSync with Amazon FSx helps to migrate self-managed file systems to Windows storage systems.
 - offers identity-based authentication using Microsoft Active Directory (AD)
-- Automatically encrypts data at rest with AWS KMS and uses SMB Kerberos session keys to encrypt data in transit
+- Automatically encrypts data at rest with [`AWS KMS`](./KMS.md) and uses SMB Kerberos session keys to encrypt data in transit
 
 ## Use Case:
 - Large organizations which requires shared access to multople data sets between multiple users can use Amazon FSx for Windows File Server.

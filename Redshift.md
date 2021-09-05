@@ -17,4 +17,4 @@ Amazon redshift is a fast and poweful, fully managed, PB-scale data warehouse se
 - Encrypted at rest using AES-256 encryption
 - By default, Redshift takes care of key management
     - manager own keys thorugh HSM
-    - AWS KMS
+    - [`AWS KMS`](./KMS.md)

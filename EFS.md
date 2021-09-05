@@ -20,10 +20,10 @@ Amazon Elastic File System provides scalable, fully managed elastic distributed 
 - provides EFS lifecycle management for the better price-performance ratio
 - EFS makes easy to migrate applications to AWS Cloud/ on-premise (AWS DataSync)
 - Support automatic/scheduled backups of EFS (AWS Backups)
-- Integrate with cloudWatch and cloudTrail for monitoring and tracking
-- supports encryption at trasnsit (TLS) and rest both. (AWS KMS)
+- Integrate with [`cloudWatch`](./Cloudwatch.md) and [`cloudTrail`](./CloudTrail.md) for monitoring and tracking
+- supports encryption at trasnsit (TLS) and rest both. ([`AWS KMS`](./KMS.md))
 - read-after-write consistency for data access
-- Integrate with IAM for access rights and security
+- Integrate with [`IAM`](./IAM.md) for access rights and security
 
 ## Use Case (sharing files across instances/containers)
 - mission critical business applications

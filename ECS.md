@@ -10,11 +10,11 @@ Amazon Elastic Container Service is a regional container orchestration service l
 - supports path-based routing and priority rules 
 
 ## Integration Service
-- AWS IAM
-- Amazon EC2 Auto Scaling
+- [`AWS IAM`](./IAM.md)
+- [`Amazon EC2 Auto Scaling`](./AS.md)
 - [`Elastic Load Balancing`](./ECR.md)
-- Amazon Elastic Container Registry
-- AWS CloudFormation
+- [`Amazon Elastic Container Registry`](./ECR.md)
+- [`AWS CloudFormation`](./CF.md)
 
 ## Use Case
 1. Microservices: by architectural method that decomposes or decuoples complex applications into smaller and independent services

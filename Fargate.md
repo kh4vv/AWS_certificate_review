@@ -5,4 +5,4 @@ AWS Fargate is a serverless compute service that is used for containers by [`Ama
 -  Storage types
     - Amazon EFS volumes for persistent storage
     - Ephemeral storage for nonpersistent storage
-- Highly scalable and provide built-in integrations with other AWS services like Amazon CloudWatch Container Insights. 
+- Highly scalable and provide built-in integrations with other AWS services like [`Amazon CloudWatch`](./Cloudwatch.md) Container Insights. 

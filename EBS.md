@@ -43,7 +43,7 @@ Amazon Elastic Block Store is a persistent block-level storage (volume) service 
 - EBS volume can be mounted parallely using RAID settings
 - virtual drive with AZ specific
 - Unencrypted volume can be encrypted using an encrypted snapshot
-- When share an encrypted snapshot, must also share the customer-managed CMK used to encrypt the snapshot
+- When share an encrypted snapshot, must also share the [`customer-managed CMK`](./KMS.md) used to encrypt the snapshot
 
 ## EBS vs Instance Store
 - Instance Store (ephemeral storage):
@@ -57,4 +57,3 @@ Amazon Elastic Block Store is a persistent block-level storage (volume) service 
     - Persistent storage
     - Reliable & durable storage
     - boots faster than instance stores
-    

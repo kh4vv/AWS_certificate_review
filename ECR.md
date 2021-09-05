@@ -5,7 +5,7 @@ Amazon Elastic Container Registry (ECR) is a managed service that allows users t
 ## Features
 - Secure, scalable, reliable, and supports private container image repositories using AWS IAM. 
 - Integrate with [`ECS`](./ECS.md), [`EKS`](./EKS.md), [`Lambda`](./Lambda.md), and [`AWS Fargate`](./Fargate.md) for easy deployment.
-- Encryption can be done via HTTPS and Amazon S3 server-side encryption or by using customer keys managed by AWS Key Management System (KMS).
+- Encryption can be done via HTTPS and Amazon S3 server-side encryption or by using customer keys managed by [`AWS Key Management System (KMS)`](./KMS.md).
 
 ## Components
 - Registry: contains repositories and store image
