@@ -37,3 +37,6 @@
 30. [`CodeBuild, CodeCommit, CodeDeploy, X-Ray`](./Code.md)
 - Migration Service
 31. [`Database Migration Service`](./DMS.md)
+32. [`API Gateway`](API.md)
+33. [`CloudFront`](CloudFront.md)
+34. [`Transit Gateway`](./Transit.md)
