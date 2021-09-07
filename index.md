@@ -35,8 +35,11 @@
 - Others
 29. [`Organizations`](./Org.md)
 30. [`CodeBuild, CodeCommit, CodeDeploy, X-Ray`](./Code.md)
-- Migration Service
+- Migration/Distribution Service
 31. [`Database Migration Service`](./DMS.md)
 32. [`API Gateway`](API.md)
 33. [`CloudFront`](CloudFront.md)
 34. [`Transit Gateway`](./Transit.md)
+35. [`Direct Connect`](./DC.md)
+36. [`Elastic Load Balaner`](./ELB.md)
+37. [`Route 53`](./Route53.md)
