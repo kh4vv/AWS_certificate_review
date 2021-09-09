@@ -12,7 +12,7 @@
 
 ## Lambda Function
 - a block of code in Lambda
-- After deploying the Lambda function, Lambda automatically monitors functions, reporting metrics through Amazon CloudWatch
+- After deploying the Lambda function, Lambda automatically monitors functions, reporting metrics through [`Amazon CloudWatch`](Cloudwatch.md)
 
 ## Lambda Event
 - Lambda Event is an entity that invokes the Lambda Function

@@ -23,4 +23,4 @@ It collects monitoring data in the form of logs, metricis, and events from AWS r
 - CloudWatch Alarm: monitor metrics and sentd notifications or make automatic changes to resources based on actions whenerver triggers a threshold.
 - CloudWatch Container: collect and summarize metrics and logs from containerzied applications. ([`Amazon ECS`](./ECS.md), [`Amazon EKS`](./EKS.md), and Kubernets platforms on [`Amazon EC2`](./EC2.md))
 - CloudWatch Lambda: collect and summarize system-level metrics including CPU time, memory, disk, and netowrk for serverless applications running on [`AWS Lambda`](./Lambda.md)
-- CloudWatch Agent: install on the EC2 instance
+- CloudWatch Agent: install on the [`EC2 instance`](./EC2.md)

@@ -7,7 +7,7 @@ AWS IAM is a service that helps you control access to AWS resources securely. Yo
 - grant people to administer AWS Account without sharing the password and access key
 - PCI DSS compliant
 - add MFA for safety reason
-- Using CloudTrail, receive log records that include information about who made requests for AWS Acount requests
+- Using [`CloudTrail`](./CloudTrail.md), receive log records that include information about who made requests for AWS Acount requests
 
 ## Components
 - IAM & Root User
@@ -23,4 +23,3 @@ AWS IAM is a service that helps you control access to AWS resources securely. Yo
 - IAM Policies
     - decide what level of access an Identity or AWS resource will possess
     - JSON based on documents
-    

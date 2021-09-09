@@ -1,7 +1,7 @@
 # Amazon API Gateway
 ## What is Amazon API Gateway?
 Amazon API Gateway is a service which creates, publishes, maintains, monitors, and secures API at any scale. 
-- help to create synchronous microservices with [`Load Balacners`](./ELB) and forms the app-facing part of the AWS serverless infrastructure with AWS Lambda.
+- help to create synchronous microservices with [`Load Balacners`](./ELB) and forms the app-facing part of the AWS serverless infrastructure with [`AWS Lambda`](./Lambda.md).
 
 ## Endpoint types
 - Edge-optimized endpoint

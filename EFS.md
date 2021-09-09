@@ -16,7 +16,7 @@ Amazon Elastic File System provides scalable, fully managed elastic distributed 
 
 ## Features
 - NFS distributed file system. 
-- [`EC2`](./EC2.md) instance can access EFS across AZs, regions, VPCs & on-premises through AWS Directo Connect or AWS VPN
+- [`EC2`](./EC2.md) instance can access EFS across AZs, regions, [`VPCs`](./VPC.md) & on-premises through [`AWS Direct Connect`](./DC.md) or AWS VPN
 - provides EFS lifecycle management for the better price-performance ratio
 - EFS makes easy to migrate applications to AWS Cloud/ on-premise (AWS DataSync)
 - Support automatic/scheduled backups of EFS (AWS Backups)

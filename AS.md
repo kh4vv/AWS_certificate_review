@@ -8,14 +8,14 @@ AWS Auto Scaling keeps on monintoring application and automatically adjusts the 
 - Free to use
 
 ## Launch configuration & launch template
-A launch configureation and template defines an instance configuration template that an auto scaling group uses to launch EC2 instance.
-- Use launch template to make sure to get the latest features from Amazon EC2
+A launch configureation and template defines an instance configuration template that an auto scaling group uses to launch [`EC2 instance`](./EC2.md).
+- Use launch template to make sure to get the latest features from [`Amazon EC2`](./EC2.md)
 
 ## Health Check
-EC2 Auto Scaling replaes instances that fail health checks automatically. 
+[`EC2`](./EC2.md) Auto Scaling replaes instances that fail health checks automatically. 
 
 ## Auto Scaling Lifecyle Hooks
-- Lifecycle hook will pause EC2 instance
+- Lifecycle hook will pause [`EC2 instance`](./EC2.md)
 - The paused instances will remain in the wait state until the action is completed
 - The wait state will remain active till the timeout period ends
 

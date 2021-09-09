@@ -27,7 +27,7 @@ Amazon FSx for Lustre is an FSx solution that offers scalable storage for the Lu
 
 ## Integration:
 - integrates with ['Amazon S3`](./S3.md). It stores datasets in S3 as files instead of objects and automatically updates with the latest data to run the workload. 
-- offers Nacl using POSIX permissions or Amazon VPC Sercurity Groups. 
+- offers Nacl using POSIX permissions or [`Amazon VPC`](./VPC.md) Sercurity Groups. 
 - integrate with SageMaker to process machine learning workloads
 
 ## Feature

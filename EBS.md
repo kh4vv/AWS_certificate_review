@@ -1,6 +1,6 @@
 # AWS EBS - Elastic Block Store
 ## What is AWS EBS?
-Amazon Elastic Block Store is a persistent block-level storage (volume) service designed to be used with Amazon EC2 instances. EBS is AZ specific and automatically replicated within its AZ to protect from component failure, offering high availability and durability
+Amazon Elastic Block Store is a persistent block-level storage (volume) service designed to be used with [`Amazon EC2 instances`](./EC2.md). EBS is AZ specific and automatically replicated within its AZ to protect from component failure, offering high availability and durability
 
 ## Types of EBS
 - SSD Type: optimized for transactional workloads
@@ -34,7 +34,7 @@ Amazon Elastic Block Store is a persistent block-level storage (volume) service 
 
 ## Features
 - High performance, high scalable
-- encryption of data at rest through Amazon KMS
+- encryption of data at rest through [`Amazon KMS`](./KMS.md)
 - Automate Backups through data lifecyle policies using EBS Snapshots to [`S3 Storage`](./S3.md)
 - EBS can detach from old instance and attach to new instance quickly
 - Backup/Migration: to move a volume across AZs, need to take a snapshot first
