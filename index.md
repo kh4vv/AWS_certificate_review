@@ -43,3 +43,7 @@
 35. [`Direct Connect`](./DC.md)
 36. [`Elastic Load Balaner`](./ELB.md)
 37. [`Route 53`](./Route53.md)
+- Cloud
+38. [`AWS VPC`](./VPC.md)
+39. [`SNS`](./SNS.md)
+40. [`SQS`](./SQS.md)
