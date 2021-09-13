@@ -13,7 +13,7 @@
 9. [`S3`](./S3.md)
 10. [`EBS`](./EBS.md)
 11. [`EFS`](./EFS.md)
-12. [`FSx`](./FSx.md)
+12. [`FSx`](./Fsx.md)
 13. [`Snowball`](./Snowball.md)
 14. [`Storage Gateway`](./StorageGateway.md)
 15. [`Aurora`](./Aurora.md)
